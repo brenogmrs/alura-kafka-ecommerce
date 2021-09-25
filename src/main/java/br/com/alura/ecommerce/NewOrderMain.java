@@ -19,7 +19,7 @@ public class NewOrderMain {
                 ex.printStackTrace();
                 return;
             }
-            System.out.println(data.topic(), "::", data.partition(), "::", data.offset(), "/", data.timestamp());
+            System.out.println(data.topic());
         }).get();
         System.out.println("Sent to topic ECOMMERCE_NEW_ORDER");
     }
@@ -30,5 +30,8 @@ public class NewOrderMain {
         properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         return properties;
+    }
+
+    public static class FraudDetectorService {
     }
 }
