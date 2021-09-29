@@ -18,7 +18,8 @@ public class NewOrderMain {
         producer.send(record, getCallback()).get();
         System.out.println("Sent to topic ECOMMERCE_NEW_ORDER");
 
-        var emailRecord = new ProducerRecord<>("ECOMMERCE_SEND_MAIL", "", "");
+        var email = "Thanks for your order! We are processing your order";
+        var emailRecord = new ProducerRecord<>("ECOMMERCE_SEND_EMAIL", "", "");
         producer.send(emailRecord, getCallback()).get();
     }
 
