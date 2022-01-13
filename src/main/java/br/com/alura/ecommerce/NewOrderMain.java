@@ -25,7 +25,7 @@ public class NewOrderMain {
 
     private static Callback getCallback() {
         return (data, ex) -> {
-            if(ex != null) {
+            if (ex != null) {
                 ex.printStackTrace();
                 return;
             }
