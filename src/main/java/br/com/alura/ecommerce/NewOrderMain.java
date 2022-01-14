@@ -19,7 +19,7 @@ public class NewOrderMain {
         System.out.println("Sent to topic ECOMMERCE_NEW_ORDER");
 
         var email = "Thanks for your order! We are processing your order";
-        var emailRecord = new ProducerRecord<>("ECOMMERCE_SEND_EMAIL", "", "");
+        var emailRecord = new ProducerRecord<>("ECOMMERCE_SEND_EMAIL", "", email);
         producer.send(emailRecord, getCallback()).get();
     }
 
@@ -41,6 +41,4 @@ public class NewOrderMain {
         return properties;
     }
 
-    public static class FraudDetectorService {
-    }
 }
