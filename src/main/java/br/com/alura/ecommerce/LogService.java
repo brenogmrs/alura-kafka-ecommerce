@@ -8,7 +8,7 @@ public class LogService {
         var logService = new LogService();
 
         try (KafkaService service = new KafkaService(LogService.class.getSimpleName(), "ECOMMERCE.*",
-                logService::parse)) {
+                logService::parse, String.class)) {
 
             service.run();
         }
